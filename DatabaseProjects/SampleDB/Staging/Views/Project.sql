@@ -8,6 +8,7 @@ WITH Project AS (
 		   [Project Start Date]       = TRY_CONVERT(DATE, p.[StartDate]),
 		   [Project End Date]         = TRY_CONVERT(DATE, p.[EndDate]),
 		   [Project Status]           = p.[ProjectStatusLabelName],
+		   [ProjectManager]		  = 'Mike Diehl',
 		   [LastUpdated]	          = GETDATE(),
 		   [UpdatedBy]		          = SUSER_SNAME()
 	FROM [raw].[Project] p
@@ -19,6 +20,7 @@ SELECT   [ProjectId]
 		,[Project Start Date]    
 		,[Project End Date]      
 		,[Project Status]
+		,[ProjectManager]
 		,[LastUpdated]
 		,[UpdatedBy]		
 	    ,[RowHash] = hashbytes('SHA2_512',
@@ -29,6 +31,7 @@ SELECT   [ProjectId]
 										,[Project Start Date]    
 										,[Project End Date]      
 										,[Project Status]
+										,[ProjectManager]
 									)
 								) 
 FROM Project
