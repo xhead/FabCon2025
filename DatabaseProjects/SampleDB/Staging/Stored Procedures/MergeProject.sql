@@ -17,6 +17,7 @@ when matched and trg.RowHash <> src.RowHash then
 		,[Project Start Date]	  = src.[Project Start Date]	 
 		,[Project End Date]		  = src.[Project End Date]		 
 		,[Project Status]         = src.[Project Status]
+		,[Project Manager]        = src.[ProjectManager]
 		,[LastUpdated]	          = src.[LastUpdated]	 
 		,[UpdatedBy]	          = src.[UpdatedBy]	 
 
@@ -30,6 +31,7 @@ when not matched by target then
 		,[Project Start Date]	
 		,[Project End Date]		
 		,[Project Status]
+		,[Project Manager]
 		,[LastUpdated]	
 		,[UpdatedBy]		
 	)
@@ -42,6 +44,7 @@ when not matched by target then
 		,[Project Start Date]	
 		,[Project End Date]		
 		,[Project Status]
+		,[ProjectManager]
 		,[LastUpdated]	
 		,[UpdatedBy]			
 	); 
